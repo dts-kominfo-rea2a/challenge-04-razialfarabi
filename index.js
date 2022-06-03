@@ -11,19 +11,18 @@ const dates = [
 const createDate = (dates, index) => {
   // tanggal = "2019-01-02";
   dataTanggal = [];
-  if (index !== undefined) {
-    for (counter = 0; counter < dates.length; counter++) {
-      dataTanggal.push(Date.parse(dates[counter]).toString() / 1000);
-    }
-    return dataTanggal.sort()[index];
-  } else {
+  if (index == null) {
     for (counter = 0; counter < dates.length; counter++) {
       dataTanggal.push(Date.parse(dates[counter]).toString() / 1000);
     }
     return dataTanggal.sort().join("-");
+  } else {
+    for (counter = 0; counter < dates.length; counter++) {
+      dataTanggal.push(Date.parse(dates[counter]) / 1000);
+    }
+    return dataTanggal.sort()[index].toString();
   }
 };
-
 
 // !JANGAN DIMODIFIKASI
 (() => {
@@ -33,7 +32,7 @@ const createDate = (dates, index) => {
   console.log(createDate?.(dates));
 
   // '1614841200' (dalam string)
-  console.log(createDate?.(dates, 2));
+  console.log(createDate?.(dates, 0));
 })();
 
 module.exports = {
