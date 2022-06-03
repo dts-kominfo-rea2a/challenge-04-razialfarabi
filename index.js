@@ -32,7 +32,7 @@ const createDate = (dates, index) => {
   console.log(createDate?.(dates));
 
   // '1614841200' (dalam string)
-  console.log(createDate?.(dates, 0));
+  console.log(createDate?.(dates, 2));
 })();
 
 module.exports = {
