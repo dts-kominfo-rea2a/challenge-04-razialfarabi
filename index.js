@@ -8,9 +8,24 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (dates, index) => {
+  // tanggal = "2019-01-02";
+  dataTanggal = [];
+  if (index !== undefined) {
+    for (counter = 0; counter < dates.length; counter++) {
+      dataTanggal.push(Date.parse(dates[counter]).toString() / 1000);
+    }
+    return dataTanggal.sort()[index];
+  } else {
+    for (counter = 0; counter < dates.length; counter++) {
+      dataTanggal.push(Date.parse(dates[counter]).toString() / 1000);
+    }
+    return dataTanggal.sort().join("-");
+  }
+};
 
-// ! JANGAN DIMODIFIKASI
+
+// !JANGAN DIMODIFIKASI
 (() => {
   // IIFE
 
